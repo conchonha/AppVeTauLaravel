@@ -32,6 +32,7 @@ Route::group(['prefix'=>'Tuyen'],function(){
 
 	Route::get('getAllTuyen',[TuyenController::class,'getAllTuyen']);
 
+	Route::post('timChuyenTau',[TuyenController::class,'timChuyenTau']);
 });
 
 
