@@ -36,7 +36,7 @@ class TuyenController extends Controller
     	$table = Tau::where('Tau.TENTAU',$request->tentau)->get();
     	if($table->count() > 0){
     		$idTau = $table[0]->id;
-    		$table = Toa::where('Toa.tau_id',$idTau)->get();
+    		$table = Toa::where('Toa.tau_id',$idTau)->orderBy('Toa.TENTOA')->get();
     		return $this->respondWithJson(200,"success",$table,$table->count());
     	}else{
     		return $this->respondWithJson(300,"Lỗi không tìm thấy tàu nào tương ứng",null,0);
